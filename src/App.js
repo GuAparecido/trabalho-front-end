@@ -1,8 +1,11 @@
+import { ChakraProvider } from '@chakra-ui/react';
 import './App.css';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
+import React from 'react';
 
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import AllCards from './pages/AllCards';
 
 const router = createBrowserRouter([
   {
@@ -13,12 +16,18 @@ const router = createBrowserRouter([
     path: "/profile",
     element: <Profile />,
   },
+  {
+    path: "/cards",
+    element: <AllCards />,
+  },
 
 ]);
 
 function App() {
   return (
-    <RouterProvider router={router} />
+    <ChakraProvider>
+      <RouterProvider router={router} />
+    </ChakraProvider>
   );
 }
 
