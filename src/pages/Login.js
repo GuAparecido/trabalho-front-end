@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import '../style/Login.css';
 import { useNavigate } from 'react-router-dom';
 import { EmailIcon, LockIcon } from '@chakra-ui/icons'
@@ -7,8 +7,9 @@ import {
     InputLeftElement,
     Input,
     InputRightElement,
-    CheckboxIcon,
     Box,
+    InputRightAddon,
+    Button,
 
 } from '@chakra-ui/react';
 
@@ -16,6 +17,7 @@ const Login = () => {
     const navigate = useNavigate();
     const [inputEmail, setEmail] = useState('');
     const [inputSenha, setSenha] = useState('');
+    const [show, setShow] = useState(false)
 
     const submit = (e) => {
         e.preventDefault();
@@ -45,31 +47,36 @@ const Login = () => {
         setSenha(event.target.value);
     }
 
+    const handleClick = () => setShow(!show)
+
     return (
         <>
-            <div className='divLogin'>
-                <Box >
+            <div>
+                <Box className='boxLogin'>
                     <h1 className='title'>BEM VINDO AO DIGIMON!</h1>
-                    <h2 className='subTitle'>Login</h2>
+                    <h2 className='subTitle'>LOGIN</h2>
                     <form onSubmit={submit} className='form'>
-                        <InputGroup >
+                        <InputGroup size='sm'>
                             <InputLeftElement pointerEvents='none' m={2} >
-                                <EmailIcon color='gray.300' />
+                                <EmailIcon color='gray.700' marginLeft={4} marginRight={2} />
                             </InputLeftElement >
-                            <Input type='email' id='email' name='email' placeholder='Digite seu e-mail' m={2} borderColor={'black'} value={inputEmail} onChange={onInputEmail} />
+                            <Input type='email' id='email' name='email' w={800} placeholder='Digite seu e-mail' bgColor={'transparent'} m={2} borderColor={'blue.400'} value={inputEmail} onChange={onInputEmail} />
+                            <InputRightAddon m={2} bgColor={'transparent'} borderColor={'blue.400'} >.com</InputRightAddon>
                         </InputGroup>
 
                         <InputGroup>
                             <InputLeftElement pointerEvents='none' color='gray.300' fontSize='1.2em' m={2}>
-                                <LockIcon color='gray.300' />
+                                <LockIcon color='gray.700' w={4} m={0} p={0}/>
                             </InputLeftElement>
-                            <Input type='password' id='password' name='password' placeholder='Digite sua senha' m={2} borderColor={'black'} value={inputSenha} onChange={onInputSenha} />
-                            <InputRightElement>
-                                <CheckboxIcon color='green.500' />
+                            <Input type={show ? 'text' : 'password'} id='password' name='password' w={800} placeholder='Digite sua senha' m={2} bgColor={'transparent'} borderColor={'blue.400'} value={inputSenha} onChange={onInputSenha} />
+                            <InputRightElement width='4.5rem' m={2} >
+                                <Button h='1.75rem' size='sm' onClick={handleClick} bg={'transparent'}>
+                                    {show ? 'Fechar' : 'Ver'}
+                                </Button>
                             </InputRightElement>
                         </InputGroup>
 
-                        <button type="submit" className='button'>Enviar</button>
+                        <button type="submit" className='button'>Enter</button>
                     </form>
                 </Box>
             </div >

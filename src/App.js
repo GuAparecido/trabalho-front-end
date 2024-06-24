@@ -1,11 +1,11 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import './App.css';
 import Login from './pages/Login';
-import Profile from './pages/Profile';
 import React from 'react';
 
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import AllCards from './pages/AllCards';
+import Cards from './pages/Cards';
+import InfoDigimon from './pages/InfoDigimon';
 
 const router = createBrowserRouter([
   {
@@ -13,12 +13,12 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: "/profile",
-    element: <Profile />,
+    path: "/cards",
+    element: <Cards />,
   },
   {
-    path: "/cards",
-    element: <AllCards />,
+    path: "/info",
+    element: <InfoDigimon />,
   },
 
 ]);

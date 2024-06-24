@@ -1,17 +1,18 @@
 body {
     background-image: url('../images/BackgroundDigimon.png');
+    background-attachment: fixed;
     background-position: 100%;
     width: 100%;
 }
 
-.divLogin {
+.boxLogin {
     width: 30%;
     margin: auto;
-    margin-top: 180px;
+    margin-top: 250px;
     padding: 20px;
-    border: 1px solid black;
+    border: 1px solid rgb(13, 141, 226);
     border-radius: 10px;
-
+    background-color: rgba(102, 183, 236, 0.4);
 }
 
 .title {
@@ -32,10 +33,16 @@ body {
     align-items: center;
     text-align: center;
     margin-top: 20px;
-    padding: 4px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-radius: 5px;
-    background-color: black;
-    color: aliceblue;
+    border: 1px solid rgb(13, 141, 226);
+    background-color: rgba(102, 183, 236, 0.8);
+    font-size: 20px;
+    color: darkblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .form {
