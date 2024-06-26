@@ -1,14 +1,13 @@
-body {
+.background {
     background-image: url('../images/BackgroundDigimon.png');
-    background-attachment: fixed;
-    background-position: 100%;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .boxLogin {
-    width: 30%;
-    margin: auto;
-    margin-top: 250px;
     padding: 20px;
     border: 1px solid rgb(13, 141, 226);
     border-radius: 10px;

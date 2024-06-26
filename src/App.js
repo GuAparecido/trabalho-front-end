@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     element: <Cards />,
   },
   {
-    path: "/info",
+    path: "/info/:id",
     element: <InfoDigimon />,
   },
 

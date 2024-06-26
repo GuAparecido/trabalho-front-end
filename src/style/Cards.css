@@ -1,21 +1,18 @@
-body {
+.backgroundCards {
     background-image: url('../images/thumb-1920-1148744.jpg');
     background-attachment: fixed;
     background-position: 100%;
-}
-
-.divCards {
-    display: flex; /* Alterado para flexbox para alinhar os itens em uma coluna */
-    flex-direction: column; /* Alinha os itens em uma coluna vertical */
-    gap: 20px;
-    padding: 20px;
-    align-items: center; /* Centraliza os itens horizontalmente */
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
 }
 
 .gridDigimon {
-    border: 1px solid black; /* Borda de 1px preta */
-    margin-bottom: 20px; /* Espaçamento entre os itens */
-    background-color: rgba(192, 192, 192, 0.5); /* Background cinza transparente */
+    
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    margin: 25px;
 }
 
 .boxDigimon {
@@ -24,19 +21,36 @@ body {
     align-items: center;
     justify-content: center;
     padding: 10px;
+    border: 1px solid black; 
+    margin: 20px; 
+    background-color: rgba(192, 192, 192, 0.5); 
 }
 
 .imgDigimon {
-    width: 100%; /* Ajusta a largura para ocupar 100% do espaço disponível */
-    height: auto; /* Mantém a proporção original da imagem */
-    max-width: 500px; /* Define um tamanho máximo para a imagem */
-    object-fit: cover; /* Para ajustar a imagem dentro do espaço */
-    border-radius: 10px; /* Bordas arredondadas */
+    width: 100%; 
+    height: auto; 
+    max-width: 500px; 
+    object-fit: cover; 
+    border-radius: 10px; 
 }
 
 .nomeDigimon {
-    text-align: center; /* Texto centralizado */
-    margin-top: 10px; /* Espaçamento acima do texto */
+    text-align: center; 
+    margin-top: 10px; 
     font-weight: bold;
     font-size: 20px;
+}
+
+.paginacao {
+    width: 20vw;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.numeroDePaginas {
+    background-color: rgba(192, 192, 192, 0.5);
+    border: 1px solid black; 
+    padding: 10px;
+    font-weight: bold;
 }

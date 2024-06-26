@@ -50,9 +50,9 @@ const Login = () => {
     const handleClick = () => setShow(!show)
 
     return (
-        <>
+        <div className='background'>
             <div>
-                <Box className='boxLogin'>
+            <Box className='boxLogin' w={600}>
                     <h1 className='title'>BEM VINDO AO DIGIMON!</h1>
                     <h2 className='subTitle'>LOGIN</h2>
                     <form onSubmit={submit} className='form'>
@@ -82,7 +82,7 @@ const Login = () => {
             </div >
 
 
-        </>
+        </div>
     )
 }
 
