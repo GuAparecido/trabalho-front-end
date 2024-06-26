@@ -27,9 +27,7 @@ const Login = () => {
         } else if (inputEmail.length < 8) {
             alert('O campo e-mail tem menos de 8 dígitos ')
             console.log(inputEmail);
-        }
-
-        if (!inputSenha) {
+        } else if (!inputSenha) {
             alert('Preencha o campo senha');
         } else if (inputSenha.length < 8) {
             alert('Senha deve ter no mínimo 8 caracteres');
