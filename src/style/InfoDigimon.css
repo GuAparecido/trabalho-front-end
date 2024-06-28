@@ -1,8 +1,31 @@
 .backgroundInfoDigimon {
-    background-image: url('../images/thumb-1920-1361830.png');
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
+    background-image: url('../images/thumb-1920-1148744.jpg');
+    display: grid;
+    min-height: 100vh; 
+    place-items: center;
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed;
+
+}
+
+.infoDigimon {
+    font-family: 'Courier New', Courier, monospace;
+    display: contents;
+    align-content: center;
+}
+
+.infoDadosDigimon {
+    display: contents;
+    align-content: center;
+    text-align: center;
+}
+
+.imagemDigimon {
     align-items: center;
+    display: inline-block;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.795);
+    font-weight: bold;
+
 }

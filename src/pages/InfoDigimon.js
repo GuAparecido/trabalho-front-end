@@ -3,30 +3,27 @@ import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import '../style/InfoDigimon.css'
+import HabitiesDigimon from "../components/HabilitiesDigimon";
+import ImagemDigimon from "../components/ImagemDigimon";
+import TypeDigimon from "../components/TypeDigimon";
+import LevelDigimon from "../components/LevelDigimon";
+import AttributesDigimon from "../components/AttributesDigimon";
+import FieldsDigimon from "../components/FieldsDigimon";
+import PriorEvolutions from "../components/PriorEvolutions";
+import NextEvolutions from "../components/NextEvolutions";
 
 const InfoDigimon = () => {
     const { id } = useParams();
 
-    const [digimon, setDigimon] = useState([]);
-    const [type, setType] = useState([]);
+    const [digimon, setDigimon] = useState();
 
     const navigate = useNavigate();
 
-    const getInfo = async () => {
+    const getInfo = useCallback(async () => {
         try {
             const response = await axios.get(`https:digi-api.com/api/v1/digimon/${id}`);
             setDigimon(response.data);
             console.log(response.data);
-        } catch (error) {
-            console.error(error);
-        }
-    }
-
-    const getTypes = useCallback(async () => {
-        try {
-            const response = await axios.get(`https:digi-api.com/api/v1/digimon/${id}`);
-            setType(response.data.types);
-            console.log(response.data.types);
         } catch (error) {
             console.error(error);
         }
@@ -36,17 +33,7 @@ const InfoDigimon = () => {
         getInfo();
     }, []);
 
-    useEffect(() => {
-        getTypes();
-    }, [getTypes]);
-
     if (!digimon) {
-        return (
-            <div>Carregando...</div>
-        );
-    }
-
-    if (!type) {
         return (
             <div>Carregando...</div>
         );
@@ -55,10 +42,22 @@ const InfoDigimon = () => {
     return (
         <div className="backgroundInfoDigimon">
             <div className="infoDigimon">
-            <h1>{digimon.name}</h1>
-                <div>{digimon.releaseDate}</div>
-                <div>{digimon.id}</div>
-
+                <div className="imagemDigimon">
+                    <div className="infoDadosDigimon">
+                        
+                    </div>
+                    <ImagemDigimon />
+                    <Text>NÚMERO: {digimon.id}</Text>
+                        <Text>NOME: {digimon.name}</Text>
+                        <Text>DATA DE LANÇAMENTO: {digimon.releaseDate}</Text>
+                    <FieldsDigimon />
+                </div>
+                <LevelDigimon />
+                <AttributesDigimon />
+                <TypeDigimon />
+                <HabitiesDigimon />
+                <PriorEvolutions />
+                <NextEvolutions />
 
                 <Button onClick={() => { navigate("/cards") }}>Voltar</Button>
             </div >

@@ -2,18 +2,14 @@ import { useCallback, useEffect, useState } from 'react';
 import '../style/Cards.css'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { Box, Button, Image,  Text, /* Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure */} from '@chakra-ui/react';
-// import { color } from 'framer-motion';
+import { Box, Button, Image,  Text} from '@chakra-ui/react';
 
 
 const Cards = () => {
     const navigate = useNavigate();
     const [digimons, setDigimon] = useState([]);
-    const [atributos, setAtributos] = useState([]);
-    const [pages, setPages] = useState(1);
+    const [pages, setPages] = useState(0);
     const [maxPage, setMaxPage] = useState(1);
-
-    // const { isOpen, onOpen, onClose } = useDisclosure()
 
     const getDigimons = useCallback(async () => {
         try {
@@ -26,23 +22,9 @@ const Cards = () => {
         }
     }, [pages])
 
-    const getAtributos = useCallback(async () => {
-        try {
-            const response = await axios.get('https://digi-api.com/api/v1/attribute')
-            setAtributos(response.data.content.fields)
-            console.log(response)
-        } catch (error) {
-            console.log(error)
-        }
-    }, [])
-
     useEffect(() => {
         getDigimons();
     }, [getDigimons])
-
-    useEffect(() => {
-        getAtributos();
-    }, [getAtributos]);
 
     if (!digimons.length) {
         return (
@@ -50,11 +32,17 @@ const Cards = () => {
         )
     }
 
-    if (!atributos.length) {
-        return (
-            <div>Carregando...</div>
-        )
-    }
+    const handlePreviousClick = () => {
+        if (pages > 0) {
+            setPages(pages - 1);
+        }
+    };
+
+    const handleNextClick = () => {
+        if (pages < maxPage) {
+            setPages(pages + 1);
+        }
+    };
 
     return (
         <div className='backgroundCards'>
@@ -73,44 +61,6 @@ const Cards = () => {
                             ID: {digimon.id}
                             <br />
                             <Button onClick={() => {navigate(`/info/${digimon.id}`)}} m={1}>Mais informações</Button>
-
-                        
-                            {/* <Modal isOpen={isOpen} onClose={onClose}>
-                                <ModalOverlay />
-                                <ModalContent>
-                                    <ModalHeader>Habilidade</ModalHeader>
-                                    <ModalCloseButton />
-                                    <ModalBody>
-                                        {
-                                            atributos.map((fields) => {
-                                                return (
-                                                    <div>
-                                                        <p>Digimon: {fields.id} </p>
-                                                        <div>
-                                                            <p>{
-                                                                digimons.map((digimon) => {
-                                                                    if (digimon.id === fields.id) {
-                                                                        return (digimon.name)
-                                                                    }
-                                                                })
-                                                            }</p>
-                                                        </div>
-                                                        <p>Habilidade: {fields.name}</p>
-                                                        <br />
-                                                    </div>
-                                                )
-                                            })
-                                        }
-                                    </ModalBody>
-
-                                    <ModalFooter>
-                                        <Button colorScheme='blue' mr={3} onClick={onClose}>
-                                            Fechar
-                                        </Button>
-                                    </ModalFooter>
-                                </ModalContent>
-                            </Modal> */}
-
                         </Text>
                     </Box>
 
@@ -119,15 +69,15 @@ const Cards = () => {
             </div>
             <div className='paginacao'>
                 {
-                    (pages - 1 >= 0) && <Button onClick={(e) => { setPages(pages - 1) }}>Anterior</Button>
+                   <Button className={pages === 0 ? 'botaoPaginacao desativado' : ''} onClick={handlePreviousClick} disabled={pages === 0}>Anterior</Button>
                 }
                 <div className='numeroDePaginas'>
-                    {pages} - {maxPage}
+                    {pages + 1} - {maxPage + 1}
                 </div>
                 {
-                    (pages + 1 <= maxPage) && <Button onClick={(e) => { setPages(pages + 1) }}>Próximo</Button>
+                   <Button className={pages === maxPage ? 'botaoPaginacao desativado' : ''} onClick={handleNextClick} disabled={pages === maxPage}>Próximo</Button>
                 }
-            </div>
+            </div> 
 
         </div>
     );
