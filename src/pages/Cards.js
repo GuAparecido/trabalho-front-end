@@ -13,7 +13,7 @@ const Cards = () => {
 
     const getDigimons = useCallback(async () => {
         try {
-            const response = await axios.get(`https://digi-api.com/api/v1/digimon?pageSize=8&page=${pages}`)
+            const response = await axios.get(`https://digi-api.com/api/v1/digimon?pageSize=12&page=${pages}`)
             setDigimon(response.data.content)
             setMaxPage(response.data.pageable.totalPages)
             console.log(maxPage)

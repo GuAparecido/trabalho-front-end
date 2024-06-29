@@ -7,6 +7,7 @@ import('../style/Evolution.css')
 const NextEvolutions = () => {
     const { id } = useParams();
     const [nextEvolutions, setNextEvolutions] = useState([]);
+
     const getNextEvolution = useCallback(async () => {
         try {
             const response = await axios.get(`https:digi-api.com/api/v1/digimon/${id}`);
@@ -20,7 +21,7 @@ const NextEvolutions = () => {
 
     useEffect(() => {
         getNextEvolution();
-    }, []);
+    }, [getNextEvolution]);
 
     if (!nextEvolutions) {
         return (

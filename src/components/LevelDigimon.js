@@ -6,7 +6,8 @@ import { useParams } from "react-router-dom";
 const LevelDigimon = () => {
     const { id } = useParams();
     const [level, setLevels] = useState([]);
-    const getInfo = useCallback(async () => {
+
+    const getLevel = useCallback(async () => {
         try {
             const response = await axios.get(`https:digi-api.com/api/v1/digimon/${id}`);
             setLevels(response.data.levels);
@@ -18,8 +19,8 @@ const LevelDigimon = () => {
     }, [id])
 
     useEffect(() => {
-        getInfo();
-    }, []);
+        getLevel();
+    }, [getLevel]);
 
     if (!level) {
         return (

@@ -17,9 +17,10 @@ const FieldsDigimon = () => {
             console.error(error);
         }
     }, [id])
+
     useEffect(() => {
         getFields();
-    }, []);
+    }, [getFields]);
 
     if (!fields) {
         return (

@@ -1,5 +1,6 @@
 .backgroundCards {
-    background-image: url('../images/BackgroundDigimon.png');
+    background-image: url('../images/thumb-1920-1361830.png');
+    /* background-image: url('../images/BackgroundDigimon.png'); */
     display: grid;
     min-height: 100vh; 
     margin: 0;
@@ -7,13 +8,15 @@
     background-size: cover; 
     background-position: center;
     background-attachment: fixed;
+    
 }
 
 .gridDigimon {
     
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
     margin: 25px;
+    
 }
 
 .boxDigimon {
@@ -23,14 +26,20 @@
     justify-content: center;
     padding: 10px;
     border: 1px solid black; 
-    margin: 20px; 
+    margin: 20px;
+    /* 
+    Com barra de rolagem ou sem?
+    max-width: min-content; 
+    max-height: min-content;
+    */
     background-color: rgba(192, 192, 192, 0.5); 
 }
 
 .imgDigimon {
     width: 100%; 
-    height: auto; 
-    max-width: 500px; 
+    height: 100%; 
+    max-width: max-content; 
+    max-height: max-content;
     object-fit: cover; 
     border-radius: 10px; 
 }
@@ -39,7 +48,7 @@
     text-align: center; 
     margin-top: 10px; 
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .paginacao {

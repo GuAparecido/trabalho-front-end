@@ -20,7 +20,7 @@ const PriorEvolutions = () => {
     }, [id])
     useEffect(() => {
         getPriorEvolution();
-    }, []);
+    }, [getPriorEvolution]);
 
     if (!priorEvolutions) {
         return (

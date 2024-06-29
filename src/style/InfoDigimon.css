@@ -1,5 +1,6 @@
 .backgroundInfoDigimon {
-    background-image: url('../images/thumb-1920-1148744.jpg');
+    background-image: url('../images/thumb-1920-1361830.png');
+    /* background-image: url('../images/thumb-1920-1148744.jpg'); */
     display: grid;
     min-height: 100vh; 
     place-items: center;
@@ -12,7 +13,7 @@
 }
 
 .backgroundColor {
-    background-color: rgba(255, 255, 255, 0.795);
+    background-color: rgba(255, 255, 255, 0.603);
 }
 
 .infoDigimon {
@@ -46,7 +47,7 @@
     
 }
 
-.button {
+.buttonVoltar {
     float: right;
     margin-right: 300px;
     margin-bottom: 30px;

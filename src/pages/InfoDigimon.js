@@ -67,7 +67,7 @@ const InfoDigimon = () => {
 
                 </div>
 
-                <Button onClick={() => { navigate("/cards")}} className="button">Voltar</Button>
+                <Button onClick={() => { navigate("/cards")}} className="buttonVoltar">Voltar</Button>
             </div>
         </div >
     );

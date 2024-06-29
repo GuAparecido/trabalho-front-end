@@ -19,7 +19,7 @@ const HabitiesDigimon = () => {
     }, [id])
     useEffect(() => {
         getHabilies();
-    }, []);
+    }, [getHabilies]);
 
     if (!skills) {
         return (

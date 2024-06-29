@@ -19,7 +19,7 @@ const ImagemDigimon = () => {
     }, [id])
     useEffect(() => {
         getImage();
-    }, []);
+    }, [getImage]);
 
     if (!image) {
         return (
