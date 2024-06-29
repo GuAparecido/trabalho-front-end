@@ -2,6 +2,7 @@ import { Text, Image } from "@chakra-ui/react";
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import('../style/Evolution.css')
 
 const PriorEvolutions = () => {
     const { id } = useParams();
@@ -30,11 +31,15 @@ const PriorEvolutions = () => {
 
     return (
         <div>
+            <div className="tituloEvolutions">EVOLUÇÕES ANTERIORES: </div>
             {priorEvolutions.map((priorEvolutions) => (
-                <>
-                    <Text className="infoDigimonType">EVOLUÇÕES ANTERIORES: {priorEvolutions.digimon}</Text>
-                    <Image src={priorEvolutions.image} alt={priorEvolutions.digimon} />
-                </>
+                <div className="backgroundEvolution">
+                    <Text >{priorEvolutions.digimon}</Text>
+                    <div className="image">
+                        <Image width={400} src={priorEvolutions.image} alt={priorEvolutions.digimon} />
+                    </div>
+
+                </div>
             ))}
         </div>
     );

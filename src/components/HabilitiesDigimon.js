@@ -1,7 +1,8 @@
-import { Text } from "@chakra-ui/react";
+import { Text, background } from "@chakra-ui/react";
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import('../style/HabilitiesDigimon.css')
 
 const HabitiesDigimon = () => {
     const { id } = useParams();
@@ -27,12 +28,14 @@ const HabitiesDigimon = () => {
     }
     return (
         <div>
+            <Text className="infoHabilities">HABILIDADES:</Text>
             {skills.map((skills) => (
-                <>
-                    <Text className="infoDigimonType">HABILIDADE: {skills.skill}</Text>
-                    <Text>DESCRIÇÃO: {skills.description} </Text>
-
-                </>
+                <div className="backgroundDescription">
+                    <Text className="infoDescription">NÚMERO: {skills.id}</Text>
+                    <Text className="infoDescription">NOME: {skills.skill}</Text>
+                    <Text className="infoDescription">DESCRIÇÃO: {skills.description} </Text>
+                    <br></br>
+                </div>
             ))}
         </div>
     );

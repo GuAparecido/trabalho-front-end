@@ -1,0 +1,20 @@
+.backgroundEvolution {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    padding: 80px;
+    font-size: 20px;
+}
+
+.tituloEvolutions {
+    font-size: 50px;
+    font-weight: bold;
+    padding-top: 100px;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    
+}

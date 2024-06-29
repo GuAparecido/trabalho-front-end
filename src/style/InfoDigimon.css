@@ -6,26 +6,49 @@
     background-size: cover; 
     background-position: center;
     background-attachment: fixed;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+    
+}
 
+.backgroundColor {
+    background-color: rgba(255, 255, 255, 0.795);
 }
 
 .infoDigimon {
-    font-family: 'Courier New', Courier, monospace;
-    display: contents;
-    align-content: center;
+    display: flex;
+    flex-direction: row;
+    
 }
 
 .infoDadosDigimon {
-    display: contents;
+    width: 50vw;
     align-content: center;
     text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .imagemDigimon {
-    align-items: center;
-    display: inline-block;
-    justify-content: center;
-    background-color: rgba(255, 255, 255, 0.795);
     font-weight: bold;
+}
 
+.infoDadosPrincipaisDigimon {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.button {
+    float: right;
+    margin-right: 300px;
+    margin-bottom: 30px;
+    position: relative;
 }

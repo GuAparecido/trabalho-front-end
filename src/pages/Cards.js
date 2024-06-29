@@ -58,6 +58,8 @@ const Cards = () => {
                         <Text className='nomeDigimon'>
                             Nome: {digimon.name}
                             <br />
+                            {/* Professora estou retornando o ID pois solicitou 2 informações da API, mas as únicas que essa API me fornecem que seria usual nesse caso é a de id*/
+                            /* Realizei as outras importações na página de informações */}
                             ID: {digimon.id}
                             <br />
                             <Button onClick={() => {navigate(`/info/${digimon.id}`)}} m={1}>Mais informações</Button>

@@ -2,6 +2,7 @@ import { Text, Image } from "@chakra-ui/react";
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import('../style/Evolution.css')
 
 const NextEvolutions = () => {
     const { id } = useParams();
@@ -29,12 +30,15 @@ const NextEvolutions = () => {
 
 
     return (
-        <div>
+        <div >
+            <div className="tituloEvolutions">PRÓXIMAS EVOLUÇÕES:</div>
             {nextEvolutions.map((nextEvolutions) => (
-                <>
-                    <Text className="infoDigimonType">PRÓXIMAS EVOLUÇÕES: {nextEvolutions.digimon}</Text>
-                    <Image src={nextEvolutions.image} alt={nextEvolutions.digimon} />
-                </>
+                <div className="backgroundEvolution">
+                    <Text > {nextEvolutions.digimon}</Text>
+                    <div className="image">
+                        <Image width={400} src={nextEvolutions.image} alt={nextEvolutions.digimon} />
+                    </div>
+                </div>
             ))}
         </div>
     );

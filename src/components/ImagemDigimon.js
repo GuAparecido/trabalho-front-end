@@ -1,7 +1,8 @@
-import { Image} from "@chakra-ui/react";
+import { Flex, Image} from "@chakra-ui/react";
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ('../style/InfoDigimon.css')
 
 const ImagemDigimon = () => {
     const { id } = useParams();
@@ -29,9 +30,9 @@ const ImagemDigimon = () => {
     return (
         <div>
         {image.map((image) => (
-            <>
-                <Image src={image.href} alt="Digimon" w={'30vw'}/>
-            </>
+            <div className="image">
+                <Image src={image.href} alt="Digimon" w={'30vw'} maxW={'800px'} maxH={'800px'}/>
+            </div>
         ))}
     </div>
     );

@@ -24,9 +24,6 @@ const Login = () => {
         if (!inputEmail) {
             alert('Você não preencheu o campo e-mail');
             console.log(inputEmail);
-        } else if (inputEmail.length < 8) {
-            alert('O campo e-mail tem menos de 8 dígitos ')
-            console.log(inputEmail);
         } else if (!inputSenha) {
             alert('Preencha o campo senha');
         } else if (inputSenha.length < 8) {

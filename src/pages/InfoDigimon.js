@@ -41,27 +41,35 @@ const InfoDigimon = () => {
 
     return (
         <div className="backgroundInfoDigimon">
-            <div className="infoDigimon">
-                <div className="imagemDigimon">
-                    <div className="infoDadosDigimon">
-                        
+            <div className="backgroundColor">
+                <div className="infoDigimon">
+                    <div className="imagemDigimon">
+                        <div className="infoDadosPrincipaisDigimon">
+                            <Text>NÚMERO DO DIGIMON: {digimon.id}</Text>
+                            <Text>NOME DO DIGIMON: {digimon.name}</Text>
+                            <Text>DATA DE LANÇAMENTO: {digimon.releaseDate}</Text>
+                        </div>
+                        <ImagemDigimon />
+                        <div className="infoDadosDigimon">
+                            <FieldsDigimon />
+                            <LevelDigimon />
+                            <AttributesDigimon />
+                            <TypeDigimon />
+                        </div>
                     </div>
-                    <ImagemDigimon />
-                    <Text>NÚMERO: {digimon.id}</Text>
-                        <Text>NOME: {digimon.name}</Text>
-                        <Text>DATA DE LANÇAMENTO: {digimon.releaseDate}</Text>
-                    <FieldsDigimon />
-                </div>
-                <LevelDigimon />
-                <AttributesDigimon />
-                <TypeDigimon />
-                <HabitiesDigimon />
-                <PriorEvolutions />
-                <NextEvolutions />
+                    <div className="infoDadosDigimon">
+                        <HabitiesDigimon />
+                    </div>
+                </div >
+                <div className="infoDigimon">
+                    <div className="infoDadosDigimon"><PriorEvolutions /></div>
+                    <div className="infoDadosDigimon"><NextEvolutions /></div>
 
-                <Button onClick={() => { navigate("/cards") }}>Voltar</Button>
-            </div >
-        </div>
+                </div>
+
+                <Button onClick={() => { navigate("/cards")}} className="button">Voltar</Button>
+            </div>
+        </div >
     );
 }
 
