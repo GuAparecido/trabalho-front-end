@@ -34,16 +34,26 @@
     align-items: center;
     text-align: center;
     margin-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 120px;
+    padding-right: 120px;
     padding-top: 10px;
     padding-bottom: 10px;
     border-radius: 5px;
-    border: 1px solid rgb(13, 141, 226);
-    background-color: rgba(102, 183, 236, 0.8);
-    font-size: 20px;
-    color: darkblue;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgba(45, 55, 72);
+    border: 1px solid rgb(66,153,225);
+    
+}
+
+.button:hover {
+    border-color: white;
+    background-color:  rgb(66,153,225, 0.5);
+}
+
+.inputLogin:hover {
+    border-color: white;
+    background-color:  rgb(66,153,225, 0.5);
 }
 
 .form {

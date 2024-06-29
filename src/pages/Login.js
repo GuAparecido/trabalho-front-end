@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../style/Login.css';
 import { useNavigate } from 'react-router-dom';
-import { EmailIcon, LockIcon } from '@chakra-ui/icons'
+import { EmailIcon, LockIcon, ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 import {
     InputGroup,
     InputLeftElement,
@@ -10,6 +10,8 @@ import {
     Box,
     InputRightAddon,
     Button,
+    Text,
+    Select,
 
 } from '@chakra-ui/react';
 
@@ -46,37 +48,34 @@ const Login = () => {
 
     return (
         <div className='background'>
-            <div>
             <Box className='boxLogin' w={600}>
-                    <h1 className='title'>BEM VINDO AO DIGIMON!</h1>
-                    <h2 className='subTitle'>LOGIN</h2>
-                    <form onSubmit={submit} className='form'>
-                        <InputGroup size='sm'>
-                            <InputLeftElement pointerEvents='none' m={2} >
-                                <EmailIcon color='gray.700' marginLeft={4} marginRight={2} />
-                            </InputLeftElement >
-                            <Input type='email' id='email' name='email' w={800} placeholder='Digite seu e-mail' bgColor={'transparent'} m={2} borderColor={'blue.400'} value={inputEmail} onChange={onInputEmail} />
-                            <InputRightAddon m={2} bgColor={'transparent'} borderColor={'blue.400'} >.com</InputRightAddon>
-                        </InputGroup>
+                <h1 className='title'>BEM VINDO AO DIGIMON!</h1>
+                <h2 className='subTitle'>LOGIN</h2>
+                <form onSubmit={submit} className='form'>
+                    <InputGroup size='sm'>
+                        <InputLeftElement pointerEvents='none' m={2} >
+                            <EmailIcon color='gray.700' marginLeft={4} marginRight={2} w={10} />
+                        </InputLeftElement >
+                        <Input type='email' id='email' name='email' w={800} placeholder='Digite seu e-mail' bgColor={'transparent'} m={2} borderColor={'blue.400'} paddingLeft={10} value={inputEmail} onChange={onInputEmail} className='inputLogin' />
+                        <InputRightAddon m={2} bgColor={'transparent'} borderColor={'blue.400'} >.com</InputRightAddon>
+                    </InputGroup>
 
-                        <InputGroup>
-                            <InputLeftElement pointerEvents='none' color='gray.300' fontSize='1.2em' m={2}>
-                                <LockIcon color='gray.700' w={4} m={0} p={0}/>
-                            </InputLeftElement>
-                            <Input type={show ? 'text' : 'password'} id='password' name='password' w={800} placeholder='Digite sua senha' m={2} bgColor={'transparent'} borderColor={'blue.400'} value={inputSenha} onChange={onInputSenha} />
-                            <InputRightElement width='4.5rem' m={2} >
-                                <Button h='1.75rem' size='sm' onClick={handleClick} bg={'transparent'}>
-                                    {show ? 'Fechar' : 'Ver'}
-                                </Button>
-                            </InputRightElement>
-                        </InputGroup>
+                    <InputGroup>
+                        <InputLeftElement pointerEvents='none' color='gray.300' fontSize='1.2em' m={2}>
+                            <LockIcon color='gray.700' w={4} m={0} p={0} />
+                        </InputLeftElement>
+                        <Input type={show ? 'text' : 'password'} id='password' name='password' w={800} placeholder='Digite sua senha' m={2} bgColor={'transparent'} borderColor={'blue.400'} value={inputSenha} onChange={onInputSenha} className='inputLogin' />
+                        <InputRightElement width='3.5rem' alignItems={'center'} m={2} padding={0} bgColor={'transparent'} borderColor={'blue.400'} >
+                            <Button width='3.5rem' size='sm' onClick={handleClick} bg={'transparent'} padding={0} _hover={{ bg: 'transparent' }}>
+                                {show ? <ViewOffIcon /> : <ViewIcon />}
+                            </Button>
+                        </InputRightElement>
 
-                        <button type="submit" className='button'>Enter</button>
-                    </form>
-                </Box>
-            </div >
+                    </InputGroup>
+                    <button type="submit" className='button'>ENTER</button>
 
-
+                </form>
+            </Box>
         </div>
     )
 }
