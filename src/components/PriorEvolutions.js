@@ -1,10 +1,11 @@
 import { Text, Image } from "@chakra-ui/react";
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import('../style/Evolution.css')
 
 const PriorEvolutions = () => {
+    const navigate = useNavigate();
     const { id } = useParams();
 
     const [priorEvolutions, setPriorEvolutions] = useState([]);
@@ -28,7 +29,6 @@ const PriorEvolutions = () => {
         );
     }
 
-
     return (
         <div>
             <div className="tituloEvolutions">EVOLUÇÕES ANTERIORES: </div>
@@ -36,7 +36,7 @@ const PriorEvolutions = () => {
                 <div className="backgroundEvolution">
                     <Text >{priorEvolutions.digimon}</Text>
                     <div className="image">
-                        <Image width={400} src={priorEvolutions.image} alt={priorEvolutions.digimon} />
+                        <Image width={400} src={priorEvolutions.image} alt={priorEvolutions.digimon} onClick={() => { navigate(`/info/${priorEvolutions.id}`)}}/>
                     </div>
 
                 </div>

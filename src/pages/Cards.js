@@ -49,7 +49,7 @@ const Cards = () => {
             <div className='gridDigimon'>
                 {digimons.map((digimon) => (
 
-                    <Box className='boxDigimon'>
+                    <Box className='boxDigimon' onClick={() => {navigate(`/info/${digimon.id}`)}}>
                         <Image
                             src={digimon.image}
                             alt={digimon.name}
@@ -62,7 +62,8 @@ const Cards = () => {
                             /* Realizei as outras importações na página de informações */}
                             ID: {digimon.id}
                             <br />
-                            <Button onClick={() => {navigate(`/info/${digimon.id}`)}} m={1}>Mais informações</Button>
+                            {/*Deixo com o click na box ou com botão?*/}
+                            {/* <Button onClick={() => {navigate(`/info/${digimon.id}`)}} m={1}>Mais informações</Button> */}
                         </Text>
                     </Box>
 

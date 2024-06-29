@@ -1,10 +1,11 @@
 import { Text, Image } from "@chakra-ui/react";
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import('../style/Evolution.css')
 
 const NextEvolutions = () => {
+    const navigate = useNavigate();
     const { id } = useParams();
     const [nextEvolutions, setNextEvolutions] = useState([]);
 
@@ -37,7 +38,7 @@ const NextEvolutions = () => {
                 <div className="backgroundEvolution">
                     <Text > {nextEvolutions.digimon}</Text>
                     <div className="image">
-                        <Image width={400} src={nextEvolutions.image} alt={nextEvolutions.digimon} />
+                        <Image width={400} src={nextEvolutions.image} alt={nextEvolutions.digimon} onClick={() => {navigate(`/info/${nextEvolutions.id}`)}}/>
                     </div>
                 </div>
             ))}

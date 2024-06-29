@@ -12,9 +12,21 @@
     padding-top: 100px;
 }
 
+.imageDestaque {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    
+}
+
 .image {
     display: flex;
     justify-content: center;
     margin: 20px;
     
+}
+
+.image:hover {
+    transform: scale(1.1);
+
 }

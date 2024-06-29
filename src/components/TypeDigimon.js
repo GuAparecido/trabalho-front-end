@@ -31,7 +31,7 @@ const TypeDigimon = () => {
     return (
         <div>
             {type.map((type) => (
-                <Text className="infoDigimonType">TIPO: {type.type}</Text>
+                <Text className="infoDigimonType" >TIPO: {type.type} </Text>
             ))}
         </div>
     );

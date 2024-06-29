@@ -30,7 +30,7 @@ const ImagemDigimon = () => {
     return (
         <div>
         {image.map((image) => (
-            <div className="image">
+            <div className="imageDestaque">
                 <Image src={image.href} alt="Digimon" w={'30vw'} maxW={'800px'} maxH={'800px'}/>
             </div>
         ))}
