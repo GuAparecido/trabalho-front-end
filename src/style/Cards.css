@@ -2,7 +2,7 @@
     background-image: url('../images/thumb-1920-1361830.png'); 
     /* background-image: url('../images/BackgroundDigimon.png'); */
     display: grid;
-    min-height: 100vh; 
+    min-height: 100vh;
     margin: 0;
     place-items: center;
     background-size: cover; 
@@ -11,12 +11,15 @@
     
 }
 
+.containerCards {
+    max-width: 1000px;
+}
+
 .gridDigimon {
     
     display: grid;
     grid-template-columns: 33.3% 33.3% 33.3%;
-    margin: 25px;
-    
+    margin: 25px;    
 }
 
 .boxDigimon {
@@ -25,19 +28,19 @@
     align-items: center;
     justify-content: center;
     padding: 10px;
-    border: 1px solid black; 
+    border: 1px solid rgb(66,153,225);
     margin: 20px;
     /* 
     Com barra de rolagem ou sem?
     max-width: min-content; 
     max-height: min-content;
     */
-    background-color: rgba(192, 192, 192, 0.5); 
+    background-color: rgba(192, 192, 192, 0.4); 
 }
 
 .boxDigimon:hover {
-    background-color: rgba(102, 183, 236, 0.4);
-    border: 1px solid rgb(13, 141, 226);;
+    background-color:  rgb(66,153,225, 0.3);
+    border: 1px solid white;
     transform: scale(1.1);
 
 }
@@ -60,13 +63,15 @@
 
 .paginacao {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    margin-bottom: 25px;
     
 }
 
 .numeroDePaginas {
     background-color: rgba(102, 183, 236, 0.4);
-    border: 1px solid rgb(13, 141, 226);;
+    border: 1px solid rgb(13, 141, 226);
+    color: rgba(45, 55, 72);
     margin-right: 2vw;
     margin-left: 2vw;
     font-weight: bold;
@@ -79,11 +84,13 @@
 .botaoPaginacao.desativado {
     opacity: 0.5;
     cursor: not-allowed;
+    pointer-events: none;
 }
 
 .buttonPages {
     color: rgba(45, 55, 72);
     border: 1px solid rgb(66,153,225);
+    background-color:  rgb(66,153,225, 0.5);
     border-radius: 10px;
 }
 

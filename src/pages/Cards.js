@@ -46,42 +46,43 @@ const Cards = () => {
 
     return (
         <div className='backgroundCards'>
-            <div className='gridDigimon'>
-                {digimons.map((digimon) => (
+            <div className='containerCards'>
+                <div className='gridDigimon'>
+                    {digimons.map((digimon) => (
 
-                    <Box className='boxDigimon' onClick={() => { navigate(`/info/${digimon.id}`) }}>
-                        <Image
-                            src={digimon.image}
-                            alt={digimon.name}
-                            className='imgDigimon'
-                        />
-                        <Text className='nomeDigimon'>
-                            Nome: {digimon.name}
-                            <br />
-                            {/* Professora estou retornando o ID pois solicitou 2 informações da API, mas as únicas que essa API me fornecem que seria usual nesse caso é a de id*/
+                        <Box className='boxDigimon' onClick={() => { navigate(`/info/${digimon.id}`) }}>
+                            <Image
+                                src={digimon.image}
+                                alt={digimon.name}
+                                className='imgDigimon'
+                            />
+                            <Text className='nomeDigimon'>
+                                Nome: {digimon.name}
+                                <br />
+                                {/* Professora estou retornando o ID pois solicitou 2 informações da API, mas as únicas que essa API me fornecem que seria usual nesse caso é a de id*/
                             /* Realizei as outras importações na página de informações */}
-                            Número do Digimon: {digimon.id}
-                            <br />
-                            {/*Deixo com o click na box ou com botão?*/}
-                            {/* <Button onClick={() => {navigate(`/info/${digimon.id}`)}} m={1}>Mais informações</Button> */}
-                        </Text>
-                    </Box>
+                                Número do Digimon: {digimon.id}
+                                <br />
+                                {/*Deixo com o click na box ou com botão?*/}
+                                {/* <Button onClick={() => {navigate(`/info/${digimon.id}`)}} m={1}>Mais informações</Button> */}
+                            </Text>
+                        </Box>
 
-                ))
-                }
-            </div>
-            <div className='paginacao'>
-                {
-                    <Button className={pages === 0 ? 'botaoPaginacao desativado' : 'buttonPages'} onClick={handlePreviousClick} disabled={pages === 0} bg={'transparent'} _hover={{ bg: 'none' }}>Anterior</Button>
-                }
-                <div className='numeroDePaginas'>
-                    {pages + 1} - {maxPage + 1}
+                    ))
+                    }
                 </div>
-                {
-                    <Button className={pages === maxPage ? 'botaoPaginacao desativado' : 'buttonPages'} onClick={handleNextClick} disabled={pages === maxPage} bg={'transparent'} _hover={{ bg: 'none' }}>Próximo</Button>
-                }
+                <div className='paginacao'>
+                    {
+                        <Button className={pages === 0 ? 'botaoPaginacao desativado' : 'buttonPages'} onClick={handlePreviousClick} disabled={pages === 0} bg={''} _hover={ '' }>Anterior</Button>
+                    }
+                    <div className='numeroDePaginas'>
+                        {pages + 1} - {maxPage + 1}
+                    </div>
+                    {
+                        <Button className={pages === maxPage ? 'botaoPaginacao desativado' : 'buttonPages'} onClick={handleNextClick} disabled={pages === maxPage} bg={''} _hover={''}>Próximo</Button>
+                    }
+                </div>
             </div>
-
         </div>
     );
 }
