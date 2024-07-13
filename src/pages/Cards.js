@@ -3,6 +3,7 @@ import '../style/Cards.css'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Box, Button, Image, Text } from '@chakra-ui/react';
+import Header from '../components/Header';
 
 
 const Cards = () => {
@@ -46,6 +47,7 @@ const Cards = () => {
 
     return (
         <div className='backgroundCards'>
+            <Header/>
             <div className='containerCards'>
                 <div className='gridDigimon'>
                     {digimons.map((digimon) => (
@@ -73,7 +75,7 @@ const Cards = () => {
                 </div>
                 <div className='paginacao'>
                     {
-                        <Button className={pages === 0 ? 'botaoPaginacao desativado' : 'buttonPages'} onClick={handlePreviousClick} disabled={pages === 0} bg={''} _hover={ '' }>Anterior</Button>
+                        <Button className={pages === 0 ? 'botaoPaginacao desativado' : 'buttonPages'} onClick={handlePreviousClick} disabled={pages === 0} bg={''} _hover={''}>Anterior</Button>
                     }
                     <div className='numeroDePaginas'>
                         {pages + 1} - {maxPage + 1}

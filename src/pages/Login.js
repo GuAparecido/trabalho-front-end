@@ -9,9 +9,7 @@ import {
     InputRightElement,
     Box,
     InputRightAddon,
-    Button,
-    Text,
-    Select,
+    Button
 
 } from '@chakra-ui/react';
 

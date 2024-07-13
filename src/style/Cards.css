@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
+
 .backgroundCards {
     background-image: url('../images/thumb-1920-1361830.png'); 
     /* background-image: url('../images/BackgroundDigimon.png'); */
@@ -36,6 +38,7 @@
     max-height: min-content;
     */
     background-color: rgba(192, 192, 192, 0.4); 
+    font-family: 'Poppins';
 }
 
 .boxDigimon:hover {
@@ -98,3 +101,4 @@
     border-color: white;
     background-color:  rgb(66,153,225, 0.5);
 }
+
