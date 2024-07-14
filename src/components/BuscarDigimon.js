@@ -17,6 +17,7 @@ import {
     InputRightElement,
 } from "@chakra-ui/react";
 import axios from "axios";
+import { CloseIcon } from "@chakra-ui/icons";
 
 const BuscarDigimon = ({ digimon }) => {
     if (!digimon) return <div></div>;
@@ -94,24 +95,24 @@ const SearchPokemon = () => {
             >
                 <InputGroup >
                     <Input
-                        placeholder="Digite o nome do pokémon"
+                        placeholder="Busque por nome ou número"
                         colorScheme="orange"
                         value={input}
                         onChange={onChangeInput}
                     />
-                    <InputRightElement w="70px" marginRight="4px">
-                        <Button
+                    <InputRightElement>
+                        <Button bg={''} _hover={''}
                             onClick={() => {
                                 setInput("");
                                 setDigimon(undefined);
                             }}
                         >
-                            Limpar
+                            <CloseIcon w={'10px'} />
                         </Button>
                     </InputRightElement>
                 </InputGroup>
                 <Button
-                    colorScheme="orange"
+                    colorScheme="blue"
                     onClick={getDigimon}
                     isLoading={loading}
                 >

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Box, Button, Image, Text } from '@chakra-ui/react';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 
 const Cards = () => {
@@ -85,6 +86,7 @@ const Cards = () => {
                     }
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 }
