@@ -15,7 +15,7 @@ const Cards = () => {
 
     const getDigimons = useCallback(async () => {
         try {
-            const response = await axios.get(`https://digi-api.com/api/v1/digimon?pageSize=6&page=${pages}`)
+            const response = await axios.get(`https://digi-api.com/api/v1/digimon?pageSize=30&page=${pages}`)
             setDigimon(response.data.content)
             setMaxPage(response.data.pageable.totalPages)
             console.log(maxPage)
@@ -43,6 +43,10 @@ const Cards = () => {
     const handleNextClick = () => {
         if (pages < maxPage) {
             setPages(pages + 1);
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"  // Para um scroll suave (opcional)
+              });
         }
     };
 

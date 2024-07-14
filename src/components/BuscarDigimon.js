@@ -18,6 +18,8 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import { CloseIcon } from "@chakra-ui/icons";
+import HabitiesDigimon from "./HabilitiesDigimon";
+import TypeDigimon from "./TypeDigimon";
 
 const BuscarDigimon = ({ digimon }) => {
     if (!digimon) return <div></div>;
@@ -27,12 +29,10 @@ const BuscarDigimon = ({ digimon }) => {
                 <Heading size="lg">{digimon.name}</Heading>
             </CardHeader>
             <CardBody>
-                <Image src={digimon.sprites.other.home.front_default} width="250px" />
+                <Image src={digimon.image} width="250px" />
                 <Flex direction="column" gap={4} alignItems="flex-start">
                     <Text fontSize="lg">Habilidades: </Text>
-                    {digimon.abilities.map((ability) => (
-                        <Badge>{ability.ability.name}</Badge>
-                    ))}
+                    <HabitiesDigimon/>
                 </Flex>
             </CardBody>
             <CardFooter>
@@ -44,9 +44,7 @@ const BuscarDigimon = ({ digimon }) => {
                     justifyContent="center"
                 >
                     <Box>
-                        {digimon.types.map((type) => (
-                            <Badge>{type.type.name}</Badge>
-                        ))}
+                        <TypeDigimon/>
                     </Box>
                 </Flex>
             </CardFooter>
@@ -54,7 +52,7 @@ const BuscarDigimon = ({ digimon }) => {
     );
 };
 
-const SearchPokemon = () => {
+const SearchDigimon = () => {
     const toast = useToast();
 
     const [input, setInput] = useState();
@@ -69,13 +67,13 @@ const SearchPokemon = () => {
         try {
             setLoading(true);
             const response = await axios.get(
-                `https://pokeapi.co/api/v2/pokemon/${input}`
+                `https://digi-api.com/api/v1/digimon/${input}`
             );
-            setDigimon(response.data);
+            setDigimon(response.data.content);
         } catch (error) {
             toast({
                 title: "Erro",
-                description: "Pokémon não encontrado",
+                description: "Digimon não encontrado",
                 status: "error",
                 duration: 3000,
                 isClosable: true,
@@ -133,4 +131,4 @@ const SearchPokemon = () => {
 };
 
 
-export default SearchPokemon;
+export default SearchDigimon;
